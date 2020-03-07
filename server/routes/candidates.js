@@ -2,10 +2,10 @@ const express=require('express');
 const mongoose=require('mongoose');
 
 const customerRouter=express.Router();
-const {Customers}=require('../model/customers');
+const {Candidates}=require('../model/candidates');
 
 customerRouter.route('/').post(async(req,res)=>{
-    let customer=new Customers({
+    let candidate=new Candidates({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
         email:req.body.email,
@@ -16,12 +16,12 @@ customerRouter.route('/').post(async(req,res)=>{
         skills:req.body.skills,
         address:req.body.address
     })
-    customer=await customer.save()
-    .then(customer=>{
+    candidate=await candidate.save()
+    .then(candidate=>{
         return res.status(200).json({
             status:"200",
-            message:"Customers data added Successfully",
-            data:customer
+            message:"candidate data added Successfully",
+            data:candidate
         })
     }).catch(error=>{
         return res.status(400).json({

@@ -2,16 +2,16 @@
   <div class="container">
         <div class="card" style="width: 40rem;">
             <div class="card-header">
-                <h4>Customer Information</h4>
+                <h4>Candidate Registraion Form</h4>
             </div>
             <div class="card-body">
-                        <form-wizard @on-complete="addItem" shape="tab" class="form" color="#9b59b6"
+                        <form-wizard @on-complete="addCandidate" shape="tab" class="form" color="#9b59b6"
                             back-button="Back"
                             next-button="Next"
                             finish-button="Submit"
                             error-color="#dc3545">
                             <tab-content title="Personal information" :before-change="validateFirstTab" >
-                                <vue-form-generator :model="customer" 
+                                <vue-form-generator :model="candidate" 
                                     :schema="firstTabSchema"
                                     :options="formOptions"
                                     ref="firstTabForm"
@@ -21,7 +21,7 @@
                                 
                             </tab-content>
                             <tab-content title="Salary and Mobile Information" :before-change="validateSecondTab">
-                                <vue-form-generator :model="customer" 
+                                <vue-form-generator :model="candidate" 
                                     :schema="secondTabSchema"
                                     :options="formOptions"
                                     ref="secondTabForm"
@@ -29,16 +29,13 @@
                                 </vue-form-generator>
                             </tab-content>
                             <tab-content title="Experience and Skils" :before-change="validateThirdTab">
-                                <vue-form-generator :model="customer" 
+                                <vue-form-generator :model="candidate" 
                                     :schema="thirdTabSchema"
                                     :options="formOptions"
                                     ref="thirdTabForm"
                                     >        
                                 </vue-form-generator>
                             </tab-content>
-                            <div v-if="errorMsg">
-                                <span class="error">{{errorMsg}}</span>
-                            </div>
                         </form-wizard>
             </div>
         </div>
@@ -52,7 +49,7 @@ export default {
   data() {
       
     return {
-        customer:{
+        candidate:{
             firstName:'',
             lastName:'',
             email:'',
@@ -177,9 +174,9 @@ export default {
  
   methods: { 
        
-        addItem:function() {
-           let apiUrl = 'http://localhost:4000/api/customers';
-            this.axios.post(apiUrl, this.customer)
+        addCandidate:function() {
+           let apiUrl = 'http://localhost:4000/api/candidates';
+            this.axios.post(apiUrl, this.candidate)
             .then(response => console.log(response.data))
             .catch(error=>console.log(`something is happend please check bellow code`,error));
         },

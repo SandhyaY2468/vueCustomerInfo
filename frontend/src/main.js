@@ -7,7 +7,7 @@ import NProgress from 'nprogress';
 import VueFormWizard from 'vue-form-wizard';
 import Vuelidate from 'vuelidate';
 import VueFormGenerator from 'vue-form-generator';
-import Customer from './components/Customer.vue';
+import Candidate from './components/Candidate.vue';
 
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -24,9 +24,9 @@ Vue.config.productionTip = false
 
 const routes=[
   {
-    name:'Customer',
-    path:'/customer',
-    component:Customer
+    name:'Candidate',
+    path:'/candidate',
+    component:Candidate
   }
 ]
 const router=new VueRouter({

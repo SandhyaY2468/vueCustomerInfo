@@ -1,7 +1,7 @@
 const express=require('express');
 const mongoose=require('mongoose');
 
-const Customers=mongoose.model('Customers',new mongoose.Schema({
+const Candidates=mongoose.model('Candidates',new mongoose.Schema({
     firstName:{
         type:String,
         required:true
@@ -43,5 +43,5 @@ const Customers=mongoose.model('Customers',new mongoose.Schema({
        
 }))
 
-exports.Customers=Customers;
+exports.Candidates=Candidates;
 

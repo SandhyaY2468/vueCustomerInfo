@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand- bg-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link :to="{ name:'Customer' }" class="nav-link">Customer Information Model One</router-link>
+          <router-link :to="{ name:'Candidate' }" class="nav-link">Registration</router-link>
         </li>
       </ul>
     </nav>
